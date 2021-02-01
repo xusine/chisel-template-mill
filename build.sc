@@ -6,11 +6,11 @@ import mill._, scalalib._
 trait ChiselModule extends ScalaModule {
   def scalaVersion = "2.12.12"
 
-  def ivyDeps = Agg(
-    ivy"edu.berkeley.cs::chisel3:3.4.1",
+  override def ivyDeps = Agg(
+    ivy"edu.berkeley.cs::chisel3:3.4.1"
   )
 
-  def scalacOptions = Seq(
+  override def scalacOptions = Seq(
     "-Xsource:2.11",
     "-language:reflectiveCalls",
     "-deprecation",
@@ -18,13 +18,13 @@ trait ChiselModule extends ScalaModule {
     "-Xcheckinit"
   )
 
-  def scalacPluginIvyDeps = Agg(
+  override def scalacPluginIvyDeps = Agg(
     ivy"edu.berkeley.cs:::chisel3-plugin:3.4.1",
     ivy"org.scalamacros:::paradise:2.1.1"
   )
 
   object test extends Tests {
-    def ivyDeps = Agg(
+    override def ivyDeps = Agg(
       ivy"edu.berkeley.cs::chiseltest:0.3.1"
     )
     def testFrameworks = Seq("org.scalatest.tools.Framework")
