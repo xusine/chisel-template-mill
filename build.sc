@@ -4,14 +4,13 @@ import mill._, scalalib._
  * All chisel modules should extends this trait where the chisel dependency is included.
  */ 
 trait ChiselModule extends ScalaModule {
-  def scalaVersion = "2.12.13"
+  def scalaVersion = "2.13.7"
 
   override def ivyDeps = Agg(
-    ivy"edu.berkeley.cs::chisel3:3.4.3"
+    ivy"edu.berkeley.cs::chisel3:3.5.0"
   )
 
   override def scalacOptions = Seq(
-    "-Xsource:2.11",
     "-language:reflectiveCalls",
     "-deprecation",
     "-feature",
@@ -20,15 +19,14 @@ trait ChiselModule extends ScalaModule {
   )
 
   override def scalacPluginIvyDeps = Agg(
-    ivy"edu.berkeley.cs:::chisel3-plugin:3.4.3",
-    ivy"org.scalamacros:::paradise:2.1.1"
+    ivy"edu.berkeley.cs:::chisel3-plugin:3.5.0",
   )
 
   object test extends Tests {
     override def ivyDeps = Agg(
-      ivy"edu.berkeley.cs::chiseltest:0.3.3"
+      ivy"edu.berkeley.cs::chiseltest:0.5.0-RC2"
     )
-    def testFrameworks = Seq("org.scalatest.tools.Framework")
+    def testFramework = "org.scalatest.tools.Framework"
   }
 }
 
