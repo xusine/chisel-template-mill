@@ -24,7 +24,7 @@ trait ChiselModule extends ScalaModule {
 
   object test extends Tests {
     override def ivyDeps = Agg(
-      ivy"edu.berkeley.cs::chiseltest:0.5.0-RC2"
+      ivy"edu.berkeley.cs::chiseltest:0.5.0"
     )
     def testFramework = "org.scalatest.tools.Framework"
   }
