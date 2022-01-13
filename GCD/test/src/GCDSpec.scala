@@ -2,8 +2,8 @@ package GCD
 
 
 import chisel3._
-import chisel3.tester._
-import org.scalatest.FreeSpec
+import chiseltest._
+import org.scalatest.freespec.AnyFreeSpec
 import chisel3.experimental.BundleLiterals._
 
 /**
@@ -13,7 +13,7 @@ import chisel3.experimental.BundleLiterals._
   * mill GCD.test
   * }}}
   */
-class GCDSpec extends FreeSpec with ChiselScalatestTester {
+class GCDSpec extends AnyFreeSpec with ChiselScalatestTester {
   "Gcd should calculate proper greatest common denominator" in {
     test(new DecoupledGcd(16)) { dut =>
       dut.input.initSource()

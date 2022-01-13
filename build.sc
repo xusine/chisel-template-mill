@@ -15,7 +15,6 @@ trait ChiselModule extends ScalaModule {
     "-deprecation",
     "-feature",
     "-Xcheckinit",
-    "-P:chiselplugin:useBundlePlugin"
   )
 
   override def scalacPluginIvyDeps = Agg(
