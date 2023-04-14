@@ -9,7 +9,7 @@ trait ChiselModule extends ScalaModule {
   def scalaVersion = "2.13.10"
 
   override def ivyDeps = Agg(
-    ivy"edu.berkeley.cs::chisel3:3.5.6"
+    ivy"edu.berkeley.cs::chisel3:3.6.0"
   )
 
   override def scalacOptions = Seq(
@@ -20,12 +20,12 @@ trait ChiselModule extends ScalaModule {
   )
 
   override def scalacPluginIvyDeps = Agg(
-    ivy"edu.berkeley.cs:::chisel3-plugin:3.5.6",
+    ivy"edu.berkeley.cs:::chisel3-plugin:3.6.0",
   )
 
   object test extends Tests {
     override def ivyDeps = Agg(
-      ivy"edu.berkeley.cs::chiseltest:0.5.6"
+      ivy"edu.berkeley.cs::chiseltest:0.6.0"
     )
     def testFramework = "org.scalatest.tools.Framework"
   }

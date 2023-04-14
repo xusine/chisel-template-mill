@@ -78,7 +78,5 @@ class DecoupledGcd(width: Int) extends Module {
  * }}}
  */ 
 object GDDVerilogEmitter extends App {
-  import chisel3.stage._
-  val c = new ChiselStage
-  println(c.emitVerilog(new DecoupledGcd(32)))
+  println(getVerilogString(new DecoupledGcd(32)))
 }
